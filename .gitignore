@@ -1,0 +1,48 @@
+# ============================================================
+# .gitignore — KiCad 8.x projects (NYQUEN LABS template)
+# ============================================================
+
+# --- KiCad backups and autosave ---
+*-backups/
+_autosave-*
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*.kicad_prl-bak
+fp-info-cache
+*.bck
+
+# --- KiCad local/session-only files (not project state) ---
+# .kicad_prl stores per-user local settings (open sheets, selection, etc.)
+# NOT the same as .kicad_pro (project settings) — that one IS versioned.
+*.kicad_prl
+
+# --- Plot / fabrication scratch output (only versioned per-rev, see fabrication-outputs/) ---
+/hardware/plot/
+/hardware/gerbers-scratch/
+
+# --- 3D model cache ---
+*.3dshapescache
+.cache/
+
+# --- Python cache (KiCad plugins/scripting) ---
+__pycache__/
+*.pyc
+
+# --- FreeCAD ---
+*.FCBak
+*.FCStd1
+
+# --- OS junk ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Editor junk ---
+.vscode/
+*.swp
+
+# --- Do NOT ignore these (explicit reminder, no effect on git) ---
+# .kicad_pro   -> project settings, versioned
+# .kicad_sch   -> schematic, versioned
+# .kicad_pcb   -> PCB layout, versioned
+# sym-lib-table / fp-lib-table (project-local) -> versioned
