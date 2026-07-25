@@ -42,6 +42,7 @@ Prefijos cortos, en inglés, estilo conventional commits simplificado:
 | `fw:` | Firmware |
 | `docs:` | Documentación (README, datasheets, reportes) |
 | `fix:` | Corrección de un bug identificado en bring-up |
+| `proj:` | Cambios generales de proyecto |
 
 Ejemplo: `pcb: route power stage, add thermal relief on Q3`
 
