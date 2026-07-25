@@ -20,7 +20,7 @@ A full narrative write-up (with photos, once added) lives in `docs/case-study.do
 
 **Finished project:**
 
-![Finished project](\docs\img\IMG_20260724_184310.jpg)
+![Finished project](\docs\img\IMG_20260724_184310.bmp)
 
 **Render:**
 

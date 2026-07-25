@@ -20,7 +20,7 @@ El relato completo (con fotos, una vez agregadas) vive en `docs/case-study.docx`
 
 **Proyecto terminado:**
 
-![Proyecto terminado](docs\img\IMG_20260724_184310.jpg)
+![Proyecto terminado](docs\img\IMG_20260724_184310.bmp)
 
 **Render:**
 
