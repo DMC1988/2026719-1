@@ -1,6 +1,6 @@
 🇬🇧 [English](README.md) | 🇦🇷 [Español](README.es.md)
 
-# SensorOptico_ContadorBilletes — NYQUEN LABS
+# Sensor Optico para Contador de Billetes — NYQUEN LABS
 
 Rediseño de PCB de repuesto y soporte 3D impreso para una placa de sensor óptico de encoder discontinuada, usada en una máquina de contar billetes. Ver `REV_CONVENTION.md` para la convención completa de revisiones (rev A/B/C) y `CHANGELOG.md` para el historial de revisiones de este proyecto.
 
@@ -20,11 +20,11 @@ El relato completo (con fotos, una vez agregadas) vive en `docs/case-study.docx`
 
 **Proyecto terminado:**
 
-![Proyecto terminado](\docs\img\IMG_20260724_184310.jpg)
+![Proyecto terminado](docs\img\IMG_20260724_184310.jpg)
 
 **Render:**
 
-![Render](33d-renders/finished-project.bmp)
+![Render](3d-renders/finished-project.bmp)
 
 ## Estructura de Carpetas
 

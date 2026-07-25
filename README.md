@@ -1,6 +1,6 @@
 🇬🇧 [English](README.md) | 🇦🇷 [Español](README.es.md)
 
-# SensorOptico_ContadorBilletes — NYQUEN LABS
+# Optical Sensor for bill-counting Machine — NYQUEN LABS
 
 Custom replacement PCB and 3D-printed mounting bracket for a discontinued optical encoder sensor board used in a bill-counting machine. See `REV_CONVENTION.md` for the full revision convention (rev A/B/C) and `CHANGELOG.md` for this project's revision history.
 
