@@ -12,7 +12,7 @@ Custom replacement PCB and 3D-printed mounting bracket for a discontinued optica
 
 **Client:** industrial operator of cash-handling / bill-counting equipment (name withheld — this project predates NYQUEN LABS as a formal practice).
 
-A full narrative write-up (with photos, once added) lives in `docs/case-study.docx`.
+More details in `docs/case-study.docx`.
 
 ## Images
 
@@ -20,7 +20,7 @@ A full narrative write-up (with photos, once added) lives in `docs/case-study.do
 
 **Finished project:**
 
-![Finished project](\docs\img\IMG_20260724_184310.bmp)
+![Finished project](docs/img/IMG_20260724_184310.jpg)
 
 **Render:**
 

@@ -12,7 +12,7 @@ Rediseño de PCB de repuesto y soporte 3D impreso para una placa de sensor ópti
 
 **Cliente:** operador industrial de equipos de manejo de efectivo / contadoras de billetes (nombre reservado — este proyecto es anterior a NYQUEN LABS como práctica formal).
 
-El relato completo (con fotos, una vez agregadas) vive en `docs/case-study.docx`.
+Mas detalles en en `docs/case-study.docx`.
 
 ## Imágenes
 
@@ -20,7 +20,7 @@ El relato completo (con fotos, una vez agregadas) vive en `docs/case-study.docx`
 
 **Proyecto terminado:**
 
-![Proyecto terminado](docs\img\IMG_20260724_184310.bmp)
+![Proyecto terminado](docs/img/IMG_20260724_184310.jpg)
 
 **Render:**
 
