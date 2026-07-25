@@ -1,32 +1,16 @@
-# Changelog — [NOMBRE DEL PROYECTO]
+# Changelog — 2026719-1 Optical Sensor for bill-counting machine
 
-Formato: una entrada por tag de revisión (`revA`, `revB`, ...). Ver `REV_CONVENTION.md` para la convención completa.
+Format: one entry per revision tag  (`revA`, `revB`, ...). See `REV_CONVENTION.md` for convention.
 
-## [revA] — YYYY-MM-DD
+## [revA] — 2026-7-24
 
-**Estado:** en bring-up / validada / con issues conocidos
+**Status** Validated
 
-**Motivo de esta revisión:** primera versión enviada a fabricación.
+**Cause of revision:** First revision for manufacturing.
 
-**Cambios respecto a la revisión anterior:** N/A (primera rev)
+**Changes since last revision:** N/A (first rev)
 
-**Fab house:** [nombre] · **Cantidad:** [N unidades] · **Lead time:** [X días]
+**Fab house:** JLCPCB · **Quantity:** 50 unidades · **Lead time:** 15 dias
 
-**Issues conocidos post-bring-up:**
-- [ ] (completar durante bring-up)
-
----
-
-## [revB] — YYYY-MM-DD
-
-**Estado:**
-
-**Motivo de esta revisión:**
-
-**Cambios respecto a revA:**
--
-
-**Fab house:** · **Cantidad:** · **Lead time:**
-
-**Issues conocidos post-bring-up:**
-- [ ]
+**Issues known post-bring-up:**
+- N/A

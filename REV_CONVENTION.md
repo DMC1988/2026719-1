@@ -1,55 +1,55 @@
-# Convención de Revisiones — NYQUEN LABS
+# Revision Convention — NYQUEN LABS
 
-Aplica a todos los proyectos de hardware (KiCad + mecánica). Objetivo: que cualquier commit fabricado sea rastreable para siempre, y que el historial de Git refleje el ciclo real de una placa (diseño → fab → bring-up → fix → siguiente rev), no el ciclo de un repo de software.
+Applies to all hardware projects (KiCad + mechanical). Goal: every fabricated commit stays traceable forever, and the Git history reflects the real lifecycle of a board (design → fab → bring-up → fix → next rev), not a software repo's lifecycle.
 
-## Principio general
+## General Principle
 
-A diferencia del software, en hardware **no conviene tener ramas de features divergentes viviendo mucho tiempo**: el diseño avanza mayormente lineal sobre `main`, y una "revisión" (rev A, B, C...) es una **foto congelada** del momento en que ese diseño se mandó a fabricar — no una rama.
+Unlike software, in hardware **it's not worth keeping long-lived divergent feature branches**: the design moves mostly linearly on `main`, and a "revision" (rev A, B, C...) is a **frozen snapshot** of the moment that design was sent to fabrication — not a branch.
 
-## Estructura
+## Structure
 
-| Elemento | Uso |
+| Element | Use |
 |---|---|
-| Rama `main` | Estado actual/más reciente del diseño. Siempre debe abrir y compilar (ERC/DRC limpio) en KiCad. |
-| Tag `revA`, `revB`, `revC`... | Se crea en el commit exacto que se mandó a fabricar. Es inmutable — nunca se reescribe. |
-| Rama `fix/revB-bringup` (temporal) | Solo si aparecen bugs durante el bring-up de una rev ya fabricada y hay que iterar antes de la siguiente tanda. Se mergea a `main` y se borra al cerrar. |
-| Carpeta `fabrication-outputs/revA/`, `revB/`... | Snapshot de los Gerbers/BOM/Pick&Place tal como se enviaron a fabricar en esa rev. No se sobreescribe nunca — cada rev tiene su propia carpeta. |
+| `main` branch | Current/latest state of the design. Should always open and build clean (ERC/DRC clean) in KiCad. |
+| `revA`, `revB`, `revC`... tag | Created on the exact commit that was sent to fabrication. Immutable — never rewritten. |
+| `fix/revB-bringup` branch (temporary) | Only if bugs show up during bring-up of an already-fabricated rev and need to be iterated on before the next batch. Merged into `main` and deleted when closed. |
+| `fabrication-outputs/revA/`, `revB/`... folder | Snapshot of the Gerbers/BOM/Pick&Place exactly as sent to fabrication for that rev. Never overwritten — each rev has its own folder. |
 
-## Flujo paso a paso
+## Step-by-Step Flow
 
-1. Trabajás normalmente sobre `main`, commiteando avances (ver convención de mensajes abajo).
-2. Cuando el diseño está listo para mandar a fabricar:
-   - Corré ERC y DRC limpios en KiCad.
-   - Exportá Gerbers/Drill/BOM/Pick&Place a `fabrication-outputs/revX/` (X = letra de la revisión).
-   - Commiteá ese export: `git commit -m "fab: export revA outputs"`.
-   - Taggeá ese commit: `git tag -a revA -m "Sent to fab: [fab house], [fecha], [motivo/versión]"`.
+1. Work normally on `main`, committing progress (see commit message convention below).
+2. When the design is ready to send to fabrication:
+   - Run clean ERC and DRC in KiCad.
+   - Export Gerbers/Drill/BOM/Pick&Place to `fabrication-outputs/revX/` (X = revision letter).
+   - Commit that export: `git commit -m "fab: export revA outputs"`.
+   - Tag that commit: `git tag -a revA -m "Sent to fab: [fab house], [date], [reason/version]"`.
    - `git push origin main --tags`.
-3. Si durante el bring-up de revA aparece un bug que requiere cambios antes de la próxima fabricación:
-   - Abrís `fix/revA-bringup` desde el tag `revA`.
-   - Iterás ahí, mergeás a `main` cuando esté validado.
-4. Cuando el siguiente diseño esté listo para fabricar, repetís el paso 2 con `revB`.
+3. If a bug shows up during revA's bring-up that requires changes before the next fabrication run:
+   - Open `fix/revA-bringup` from the `revA` tag.
+   - Iterate there, merge into `main` once validated.
+4. When the next design is ready to fabricate, repeat step 2 with `revB`.
 
-## Convención de mensajes de commit
+## Commit Message Convention
 
-Prefijos cortos, en inglés, estilo conventional commits simplificado:
+Short prefixes, in English, simplified conventional-commits style:
 
-| Prefijo | Uso |
+| Prefix | Use |
 |---|---|
-| `sch:` | Cambios en el esquemático |
-| `pcb:` | Cambios en el layout de PCB |
-| `fab:` | Exports de fabricación (gerbers, BOM, pick&place) |
-| `mech:` | Cambios en mecánica (FreeCAD, STEP, soportes) |
+| `sch:` | Schematic changes |
+| `pcb:` | PCB layout changes |
+| `fab:` | Fabrication exports (gerbers, BOM, pick&place) |
+| `mech:` | Mechanical changes (FreeCAD, STEP, brackets) |
 | `fw:` | Firmware |
-| `docs:` | Documentación (README, datasheets, reportes) |
-| `fix:` | Corrección de un bug identificado en bring-up |
-| `proj:` | Cambios generales de proyecto |
+| `docs:` | Documentation (README, datasheets, reports) |
+| `fix:` | Fix for a bug identified during bring-up |
+| `proj:` | General project changes |
 
-Ejemplo: `pcb: route power stage, add thermal relief on Q3`
+Example: `pcb: route power stage, add thermal relief on Q3`
 
-## Naming de tags
+## Tag Naming
 
-`revA`, `revB`, `revC`... — una letra por cada vez que el diseño se envió a fabricar. Si necesitás sub-iteraciones dentro de la misma rev (ej. un segundo envío del mismo Gerber por error de fab), usá `revA.1`, `revA.2`.
+`revA`, `revB`, `revC`... — one letter per time the design was sent to fabrication. If you need sub-iterations within the same rev (e.g., a second Gerber submission due to a fab error), use `revA.1`, `revA.2`.
 
 ## CHANGELOG.md
 
-Cada tag de revisión debe tener una entrada correspondiente en `CHANGELOG.md` con: fecha, motivo del cambio respecto a la rev anterior, y estado (en bring-up / validada / con issues conocidos). Ver plantilla en `CHANGELOG.md`.
+Every revision tag must have a corresponding entry in `CHANGELOG.md` with: date, reason for the change relative to the previous rev, and status (in bring-up / validated / with known issues). See the template in `CHANGELOG.md`.

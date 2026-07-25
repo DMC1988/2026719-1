@@ -1,3 +1,3 @@
 # mechanical/
 
-Archivos FreeCAD (.FCStd) y exports STEP/STL de mecánica asociada a este proyecto (soportes, gabinetes, etc.). Versionados vía Git LFS — ver .gitattributes.
+FreeCAD (.FCStd) files and exports STEP/STL of mechanics of this project (brackets, supports, enclosures, etc.). See .gitattributes.
